@@ -53,8 +53,8 @@
 	dotfiles,
     ...
   }: {
-    nixosConfigurations.twm = {
-      let
+    nixosConfigurations = {
+      twm = let
         specialArgs = {inherit nixos-user;};
       in
         nixpkgs.lib.nixosSystem {
