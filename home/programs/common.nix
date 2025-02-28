@@ -16,7 +16,12 @@
 		nodejs
 		nodePackages.npm
 		nodePackages.pnpm
+		
+		# rust
+		cargo
+		rustc
 
 		vesktop
+		firefox
 	];
 }

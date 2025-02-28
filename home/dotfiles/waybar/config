@@ -1,0 +1,97 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["custom/music"],
+    "modules-right": ["tray", "pulseaudio", "backlight", "battery", "clock", "power-profiles-daemon", "custom/lock", "custom/power"],
+    "sway/workspaces": {
+         "disable-scroll": true,
+         "sort-by-name": true,
+         "format": " {icon} ",
+         "format-icons": {
+			"focused": "",
+			"default": ""
+      },
+     },
+	 "mpris": {
+		"format": "  {player_icon} {dynamic}",
+		"format-paused": "  {status_icon} <i>{dynamic}</i>",
+		"player-icons": {
+			"default": "",
+			"mpv": "🎵"
+		},
+		"status-icons": {
+			"paused": "󰏤"
+		},
+		"max-length": 50,
+		"interval": 1,
+		// "ignored-players": ["firefox"]
+	},
+	 "power-profiles-daemon": {
+	  "format": "{icon}",
+	  "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+	  "tooltip": true,
+	  "format-icons": {
+		"default": "󰫈",
+		"performance": "󰫈",
+		"balanced": "󰫆",
+		"power-saver": "󰫄"
+	  }
+	},
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "custom/music": {
+        "format": "  {}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ title }}'",
+        "on-click": "playerctl play-pause",
+        "max-length": 50
+    },
+    "clock": {
+        "timezone": "Europe/Paris",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": " {:%d/%m/%Y}",
+        "format": " {:%H:%M}"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰂄 {capacity}%",
+        "format-alt": "{icon}",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+    "custom/lock": {
+        "tooltip": false,
+        "on-click": "sh -c '(sleep 0.5s; swaylock)' & disown",
+        "format": "",
+    },
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "sh $HOME/.config/rofi/bin/powermenu",
+        "format": " "
+    }
+}

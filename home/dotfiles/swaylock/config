@@ -1,0 +1,19 @@
+# The defaults below could be overridden in $XDG_CONFIG_HOME/swaylock/config
+#  (~/.config/swaylock/config).
+#
+# Image path supports environment variables and shell expansions,
+# e.g. image=$HOME/Pictures/default.png
+image=/home/owen/Images/RW_Hibernation_screen.png
+scaling=fill
+
+ring-color=E0B0FF
+key-hl-color=000000
+
+ring-ver-color=000000
+inside-ver-color=E0B0FF
+
+ring-wrong-color=000000
+
+indicator-thickness=8
+indicator-radius=50
+

@@ -1,0 +1,77 @@
+* {
+  border: none;
+  font-family: 'FiraCode';
+  font-size: 1.1rem;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+  min-height: 30px;
+  color: #eac2f7;
+  border-radius: 10px;
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid #E0B0FF;
+}
+
+#custom-fedora, #workspaces, #custom-console {
+  border-radius: 10px;
+  padding-left: 0px;
+  padding-right: 5px;
+}
+
+#custom-fedora, #custom-console, #custom-swaymenu {
+  font-size: 1.8rem;
+  margin-left: 10px;
+  color: #b4befe;
+}
+
+#custom-swaymenu {
+  font-size: 22px;
+  margin-left: 5px;
+}
+
+#workspaces button {
+  border: none;
+}
+
+#tray menu {
+  background-color: #11111b;
+  border: 2px solid #eac2f7;
+}
+
+#tray {
+  padding-right: 10px;
+}
+
+#clock, #backlight, #pulseaudio, #bluetooth, #network, #battery{
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-right: 10px;
+}
+
+#backlight, #bluetooth {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-right: 5px;
+}
+
+#pulseaudio, #network {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-left: 5px;
+}
+
+#battery {
+  padding-right: 0px;
+  margin-right: 0px;
+}
+
+#clock {
+  margin-right: 0;
+}
+
+#custom-clock-icon, #battery {
+  font-size: 1.45rem;
+  color: #b4befe;
+}

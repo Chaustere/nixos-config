@@ -1,0 +1,81 @@
+{
+  "layer": "top",
+    "modules-left": ["custom/swaymenu", "custom/console", "sway/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "backlight", "pulseaudio", "bluetooth", "network", "battery", "custom/fedora"],
+    "margin-top": 5,
+    "margin-left": 5,
+    "margin-right": 5,
+    "custom/fedora": {
+      "format": "  ",
+      "tooltip": false,
+      "on-click": "sh $HOME/.config/rofi/bin/powermenu"
+    },
+    "custom/swaymenu": {
+      "format": "  ",
+      "tooltip": false,
+      "on-click": "rofi -show combi -combi-modes drun#run -modes combi"
+    },
+    "custom/console": {
+      "format": " 󰆍 ",
+      "tooltip": false,
+      "on-click": "/usr/bin/kitty"
+    },
+    "sway/workspaces": {
+      "format": "{name}",
+      "format": "{icon}",
+      "tooltip": false,
+      "all-outputs": true,
+      "format-icons": {
+        "focused": "",
+        "default": ""
+      }
+    },
+    "clock": {
+      "format": "<span color='#b4befe'> </span>{:%Y-%m-%d %H:%M}",
+      "tooltip": false,
+    },
+    "tray": {
+      "icon-size": 21,
+      "spacing": 10
+    },
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "<span color='#b4befe'>{icon}</span> {percent}%",
+      "tooltip": false,
+      "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "pulseaudio": {
+      "format": "<span color='#b4befe'>{icon}</span> {volume}%",
+      "format-muted": "",
+      "tooltip": false,
+      "format-icons": {
+        "headphone": "",
+        "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
+      },
+      "scroll-step": 1,
+      "on-click": "pavucontrol",
+    },
+    "bluetooth": {
+      "format": "<span color='#b4befe'></span> {status}",
+      "format-disabled": "", // an empty format will hide the module
+      "format-connected": "<span color='#b4befe'></span> {num_connections}",
+      "tooltip-format": "{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}   {device_address}",
+      "on-click": "blueman-manager",
+    },
+    "network": {
+      "interface": "wlp0s20f3",
+      "format": "{ifname}",
+      "format-wifi": "<span color='#b4befe'> </span>{essid}",
+      "format-ethernet": "{ipaddr}/{cidr} ",
+      "format-disconnected": "<span color='#b4befe'>󰖪 </span>No Network",
+      "tooltip": false,
+    },
+    "battery": {
+      "format": "<span color='#b4befe'>{icon}</span> {capacity}%",
+      "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "format-charging": "<span color='#b4befe'>󰂄</span> {capacity}%",
+      "tooltip": false,
+    },
+}
