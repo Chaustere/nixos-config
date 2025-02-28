@@ -58,7 +58,7 @@ options = lib.mkDefault "--delete-older-than 7d";
   # Packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim
-	nvim
+	neovim
     wget
     tree
     fastfetch
