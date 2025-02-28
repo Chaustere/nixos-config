@@ -77,7 +77,7 @@ options = lib.mkDefault "--delete-older-than 7d";
 	libnotify
 	xdg-utils
 	swaybg
-	SwayNotificationCenter
+	swaynotificationcenter
 	waybar
 	rofi
 	kitty
