@@ -70,7 +70,7 @@ options = lib.mkDefault "--delete-older-than 7d";
 	yazi
 
 	# Desktop environment packages
-	dolphin
+	kdePackages.dolphin
 	swayfx
 	xdg-desktop-portal
 	xdg-desktop-portal-wlr
