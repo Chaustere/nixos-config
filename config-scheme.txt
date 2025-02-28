@@ -1,0 +1,51 @@
+flake.nix
+|
+|--> ./host 					-- system config
+|
+|--> ./modules/user.nix 		-- user config & declaration
+|
+|--> ./modules/home.nix			-- home config & call other home modules
+|
+|--> ./modules/system.nix		-- general system config
+
+
+./
+| flake.nix
+| flake.lock
+|
+| host
+|-------| twm
+|		|-------| default.nix
+|		|		| hardware-configuration.nix
+|		\_		\_
+|
+| home
+|-------| <all user progams needing home config>
+|		| default.nix
+|		| display
+|		|-------| default.nix
+|		|		| sway.nix		-- swayfx, swaylock, swaync, xdg-desktop-wlroots
+|		|		| waybar.nix
+|		|		| rofi.nix
+|		|		\_
+|		|
+|		| programs
+|		|-------| default.nix
+|		|		| common.nix
+|		|		| kitty.nix
+|		|		| yazi.nix
+|		|		| fish.nix
+|		|		| nvim.nix
+|		|		| media.nix
+|		\_		\_
+|
+| modules
+|-------| system.nix
+|		| user.nix
+|		| home.nix
+|		\_
+|
+| *dotfiles [git submodule]
+|
+| *nixos-user	-- flake input containing user info
+\_
