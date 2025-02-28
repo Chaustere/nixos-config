@@ -40,10 +40,10 @@
     },
     "nixos-user": {
       "locked": {
-        "lastModified": 1740771273,
-        "narHash": "sha256-rQywxCqGbtbKb0P0LMhxHcXetcVn/raf8vQCAMTXSpI=",
+        "lastModified": 1740780728,
+        "narHash": "sha256-+iESRKp+GwW5qUYMiSq9KucrU8qFy90D/j9Ys4IpUhw=",
         "ref": "refs/heads/master",
-        "rev": "3f760a8efb435de7552343b1fcff108893b9d30d",
+        "rev": "c137bdd69a75cb1f8cda6d32f0e891f5ed66107f",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/Chaustere/nixos-user.git"

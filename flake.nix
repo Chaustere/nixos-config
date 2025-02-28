@@ -70,7 +70,7 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.extraSpecialArgs = inputs // specialArgs.nixos-user.username;
+              home-manager.extraSpecialArgs = inputs // { username = specialArgs.nixos-user.username; };
               home-manager.users.${nixos-user.username} = import ./modules/home.nix;
             }
           ];
