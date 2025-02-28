@@ -12,9 +12,6 @@
 		# ./yazi.nix
 	];
 
-	home.file."${config.xdg.configHome}" = config.lib.file.mkOutOfStoreSymlink {
-		source = "${dotfiles}/sway-dotfiles/";
-		recursive = true;
-	};
+	home.file.".config".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/sway-dotfiles";
 
 }
