@@ -35,7 +35,7 @@
 	#    gitUserEmail = "";
 	# }
 	nixos-user = {
-		url = "github:Chaustere/nixos-user/master";
+		url = "git@github.com:Chaustere/nixos-user.git";
 	};
 
 	# import dotfiles repo for home-manager
