@@ -126,6 +126,7 @@ options = lib.mkDefault "--delete-older-than 7d";
 		fira-code
 		nerd-fonts.fira-code
 		nerd-fonts.fira-mono
+		nerd-fonts.jetbrains-mono
 		nerd-fonts.fantasque-sans-mono
 		nerd-fonts.symbols-only
 		# (nerd-fonts.override { fonts = [ "FiraCode" "FiraMono" "FantasqueSansMono" ]; })
