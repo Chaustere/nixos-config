@@ -93,6 +93,13 @@ options = lib.mkDefault "--delete-older-than 7d";
     enable = true;
     enableSSHSupport = true;
   };
+
+  fonts.enableDefaultPackages = true;
+
+	font.packages = with pkgs; [
+		noto-fonts
+		(nerdfonts.override { font = [ "FiraCode" "FiraMono" "FantasqueSansMono" ]; })
+	];
   
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
