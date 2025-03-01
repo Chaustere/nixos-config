@@ -1,6 +1,5 @@
 {
 	config,
-	dotfiles,
 	...
 }: let
 	dotfilesPath = "${config.home.homeDirectory}/NixOS-Config/nixos-config/home/dotfiles";

@@ -1,3 +1,4 @@
 function fedorafetch
-    fastfetch --kitty-direct ~/Images/fedora.png --logo-width 35 --logo-height 19
+    fastfetch --kitty-direct ~/Images/nixos --logo-width 35 --logo-height 19
+	echo (ll ~/Images/nixos.png)
 end

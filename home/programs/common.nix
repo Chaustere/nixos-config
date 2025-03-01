@@ -1,5 +1,4 @@
 {
-	lib, 
 	pkgs, 
 	...
 }: {
@@ -14,6 +13,15 @@
 		
 		## development stuff
 		gcc
+		go
+		composer
+		php
+		luarocks
+		ruby
+		jdk23
+		julia-bin
+		python3
+		tree-sitter
 
 		# node
 		nodejs

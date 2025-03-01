@@ -263,10 +263,9 @@ bindsym $mod+n exec swaync-client -t -sw
 
 # include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "./config.d/*.conf")'
 
-include ".config.d/*.conf"
+include ./config.d/*.conf
 
 exec gammastep
 
 # Notification Daemon
 exec swaync
-exec waybar

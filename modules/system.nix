@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  username,
   ...
 }: {
   # Use the systemd-boot EFI boot loader.
@@ -69,6 +68,7 @@ options = lib.mkDefault "--delete-older-than 7d";
 	fish
 	yazi
 	light
+	power-profiles-daemon
 
 	# Desktop environment packages
 	kdePackages.dolphin
@@ -78,12 +78,14 @@ options = lib.mkDefault "--delete-older-than 7d";
 	libnotify
 	xdg-utils
 	swaybg
+	swaylock
 	swaynotificationcenter
 	waybar
 	rofi
 	kitty
 	gammastep
 	pango
+	wl-clipboard-rs
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -96,9 +98,14 @@ options = lib.mkDefault "--delete-older-than 7d";
 
   fonts.enableDefaultPackages = true;
 
-	font.packages = with pkgs; [
+	fonts.packages = with pkgs; [
 		noto-fonts
-		(nerdfonts.override { font = [ "FiraCode" "FiraMono" "FantasqueSansMono" ]; })
+		fira-code
+		nerd-fonts.fira-code
+		nerd-fonts.fira-mono
+		nerd-fonts.fantasque-sans-mono
+		nerd-fonts.symbols-only
+		# (nerd-fonts.override { fonts = [ "FiraCode" "FiraMono" "FantasqueSansMono" ]; })
 	];
   
   # This option defines the first version of NixOS you have installed on this particular machine,
