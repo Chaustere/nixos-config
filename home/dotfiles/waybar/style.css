@@ -4,42 +4,45 @@
   font-family: FantasqueSansM Nerd Font;
   font-size: 17px;
   min-height: 0;
+  margin-bottom: 0;
 }
 
 #waybar {
   background: transparent;
   color: @text;
   margin: 5px 5px;
+  margin-bottom: 0;
 }
 
 #workspaces {
-  border-radius: 1rem;
+  border-radius: 10px;
   margin: 5px;
   background-color: @surface0;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0;
 }
 
 #workspaces button {
   color: @mauve;
-  border-radius: 1rem;
+  border-radius: 10px;
   padding: 0.4rem;
   padding-right: 0.8rem;
 }
 
 #workspaces button.focused {
   color: @mauve;
-  border-radius: 1rem;
+  border-radius: 10px;
 }
 
 #workspaces button:hover {
   color: @sky;
-  border-radius: 1rem;
+  border-radius: 10px;
   background-color: rgba(0, 0, 0, 0);
 }
 
 #workspaces button.urgent {
   color: @red;
-  border-radius: 1rem;
+  border-radius: 10px;
 }
 
 #custom-music,
@@ -55,11 +58,12 @@
   background-color: @surface0;
   padding: 0.5rem 1rem;
   margin: 5px 0;
+  margin-bottom: 0;
 }
 
 #clock {
   color: @lavender;
-  border-radius: 0px 1rem 1rem 0px;
+  border-radius: 0px 10px 10px 0px;
   margin-right: 1rem;
 }
 
@@ -85,31 +89,31 @@
 
 #pulseaudio {
   color: @maroon;
-  border-radius: 1rem 0px 0px 1rem;
+  border-radius: 10px 0px 0px 10px;
   margin-left: 1rem;
 }
 
 #custom-music,
 #mpris {
   color: @mauve;
-  border-radius: 1rem;
+  border-radius: 10px;
 }
 
 #custom-lock { 
 	color: @pink;
 }
 #power-profiles-daemon {
-    border-radius: 1rem 0px 0px 1rem;
+    border-radius: 10px 0px 0px 10px;
     color: @sky;
 }
 
 #custom-power {
-    margin-right: 1rem;
-    border-radius: 0px 1rem 1rem 0px;
+    margin-right: 0.5rem;
+    border-radius: 0px 10px 10px 0px;
     color: @mauve;
 }
 
 #tray {
   /*margin-right: 1rem;*/
-  border-radius: 1rem;
+  border-radius: 10px;
 }
