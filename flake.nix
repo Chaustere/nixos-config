@@ -55,7 +55,8 @@
   }: {
     nixosConfigurations = {
       twm = let
-        specialArgs = {inherit nixos-user;};
+		dotfilesPath = "/home/${nixos-user.username}/NixOS-Config/nixos-config/home/dotfiles";
+        specialArgs = {inherit nixos-user dotfilesPath;};
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
@@ -70,7 +71,10 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
-              home-manager.extraSpecialArgs = inputs // { username = specialArgs.nixos-user.username; };
+              home-manager.extraSpecialArgs = inputs // { 
+			  	username = specialArgs.nixos-user.username;
+				dotfilesPath = specialArgs.dotfilesPath;
+			  };
               home-manager.users.${nixos-user.username} = import ./modules/home.nix;
             }
           ];

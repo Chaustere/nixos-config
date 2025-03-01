@@ -1,17 +1,16 @@
 {
-	config,
 	home-manager,
 	username,
 	...
-}: let
-	dotfilesPath = "${config.home.homeDirectory}/NixOS-Config/nixos-config/home/dotfiles";
+}@inputs : let
+	dotfilesPath = "/home/${username}/NixOS-Config/nixos-config/home/dotfiles";
 in {
 	imports = [
-		./display
-		./programs
+		./display 
+		./programs # ( inputs // { inherit dotfilesPath; } )
 	];
 
-	home-manager.extraSpecialArgs = home-manager.extraSpecialArgs // { inherit dotfilesPath; };
+	# extraSpecialArgs = home-manager.nixosModules.home-manager.extraSpecialArgs // { inherit dotfilesPath; };
 	
 	# Home Manager needs a bit of information about you and the
 	# paths it should manage.

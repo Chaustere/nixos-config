@@ -98,7 +98,8 @@ options = lib.mkDefault "--delete-older-than 7d";
     enable = true;
 	package = pkgs.swayfx;
   };
-
+  
+  programs.fish.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   programs.mtr.enable = true;
