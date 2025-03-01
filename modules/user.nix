@@ -1,4 +1,5 @@
 {
+	pkgs,
 	nixos-user,
 	...
 }: {
@@ -13,6 +14,7 @@
 		description = nixos-user.username;
 		# Enable sudo for the user, NM, and brightness/volume adjustment.
 		extraGroups = [ "wheel" "networkmanager" "video"]; 
+		shell = pkgs.fish;
 	};
 
 	nix.settings.trusted-users = [nixos-user.username];

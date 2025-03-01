@@ -15,7 +15,12 @@
   networking.hostName = "twm"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable = true;  # Easies
+
+  hardware.bluetooth = {
+	enable = true; # enables support for Bluetooth
+	powerOnBoot = true; # powers up the default Bluetooth controller on boott to use and most distros use this by default.
+  };  
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";

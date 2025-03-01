@@ -30,17 +30,24 @@ options = lib.mkDefault "--delete-older-than 7d";
   };
   
 
-  # Enable sound.
-  # hardware.pulseaudio.enable = true;
-  # OR
+  # Enable system services
   services = {
-    pipewire = {
+	# Enable power-profiles-daemon
+   	power-profiles-daemon.enable = true;
+    
+	# Pipewire
+	pipewire = {
       enable = true;
       pulse.enable = true;
   	};
-    # Enable touchpad support (enabled default in most desktopManager).
+	
+	# Bluetooth manager
+	blueman.enable = true;
+    
+	# Enable touchpad support (enabled default in most desktopManager).
     libinput.enable = true;
-
+	
+	# SDDM
 	displayManager.sddm = {
 	  enable = true;
 	  autoNumlock = true;
@@ -68,11 +75,10 @@ options = lib.mkDefault "--delete-older-than 7d";
 	fish
 	yazi
 	light
-	power-profiles-daemon
 
 	# Desktop environment packages
 	kdePackages.dolphin
-	swayfx
+	# swayfx
 	xdg-desktop-portal
 	xdg-desktop-portal-wlr
 	libnotify
@@ -87,6 +93,11 @@ options = lib.mkDefault "--delete-older-than 7d";
 	pango
 	wl-clipboard-rs
   ];
+
+  programs.sway = {
+    enable = true;
+	package = pkgs.swayfx;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

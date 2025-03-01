@@ -56,8 +56,8 @@
     "clock": {
         "timezone": "Europe/Paris",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": " {:%d/%m/%Y}",
-        "format": " {:%H:%M}"
+        "format-alt": " {:%d/%m/%Y}",
+        "format": " {:%H:%M}"
     },
     "backlight": {
         "device": "intel_backlight",
@@ -92,6 +92,6 @@
     "custom/power": {
         "tooltip": false,
         "on-click": "sh $HOME/.config/rofi/bin/powermenu",
-        "format": " "
+        "format": " "
     }
 }

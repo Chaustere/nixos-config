@@ -33,6 +33,7 @@
 
 		vesktop
 		firefox
+		starship
 	];
 
 }

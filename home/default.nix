@@ -1,11 +1,18 @@
 {
+	config,
+	home-manager,
 	username,
 	...
-}: {
+}: let
+	dotfilesPath = "${config.home.homeDirectory}/NixOS-Config/nixos-config/home/dotfiles";
+in {
 	imports = [
-		# ./display
+		./display
 		./programs
 	];
+
+	home-manager.extraSpecialArgs = home-manager.extraSpecialArgs // { inherit dotfilesPath; };
+	
 	# Home Manager needs a bit of information about you and the
 	# paths it should manage.
 	home = {
