@@ -79,8 +79,8 @@ options = lib.mkDefault "--delete-older-than 7d";
 	# Desktop environment packages
 	kdePackages.dolphin
 	# swayfx
-	xdg-desktop-portal
-	xdg-desktop-portal-wlr
+	# xdg-desktop-portal
+	# xdg-desktop-portal-wlr
 	libnotify
 	xdg-utils
 	swaybg
@@ -106,6 +106,17 @@ options = lib.mkDefault "--delete-older-than 7d";
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
+  };
+  xdg.portal = {
+  	enable = true;
+  	extraPortals = with pkgs; [
+    	xdg-desktop-portal-wlr
+    	kdePackages.xdg-desktop-portal-kde
+    	xdg-desktop-portal-gtk
+  	];
+  	wlr = {
+    	enable = true;
+  	};
   };
 
   fonts.enableDefaultPackages = true;
