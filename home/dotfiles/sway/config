@@ -264,6 +264,10 @@ bindsym $mod+n exec swaync-client -t -sw
 # include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "./config.d/*.conf")'
 
 include ./config.d/*.conf
+include /etc/sway/config.d/*.conf
+
+# Address several issues with DBus activation and systemd user sessions (taken from the Fedora sway configuration)
+exec ./config.d/session.sh
 
 exec gammastep
 
