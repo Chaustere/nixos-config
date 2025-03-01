@@ -11,6 +11,9 @@
 		# misc
 		graphviz
 		krita
+		
+		## development stuff
+		gcc
 
 		# node
 		nodejs
@@ -23,5 +26,12 @@
 
 		vesktop
 		firefox
+	];
+
+	fonts.enableDefaultPackages = true;
+
+	font.packages = with pkgs; [
+		noto-fonts
+		(nerdfonts.override { font = [ "FiraCode" "FiraMono" "FantasqueSansMono" ]; })
 	];
 }

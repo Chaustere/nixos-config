@@ -68,6 +68,7 @@ options = lib.mkDefault "--delete-older-than 7d";
     git
 	fish
 	yazi
+	light
 
 	# Desktop environment packages
 	kdePackages.dolphin
@@ -81,6 +82,8 @@ options = lib.mkDefault "--delete-older-than 7d";
 	waybar
 	rofi
 	kitty
+	gammastep
+	pango
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

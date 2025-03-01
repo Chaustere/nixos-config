@@ -32,7 +32,7 @@ set $menu $rofi_cmd -show drun
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg
-output * bg ./RW_survivor_wp.jpg fill
+output * bg ./wallpaper.jpg fill
 #
 # Example configuration:
 #
@@ -261,9 +261,12 @@ bindsym $mod+r mode "resize"
 # Toggle control center
 bindsym $mod+n exec swaync-client -t -sw
 
-include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
+# include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "./config.d/*.conf")'
+
+include ".config.d/*.conf"
 
 exec gammastep
 
 # Notification Daemon
 exec swaync
+exec waybar
