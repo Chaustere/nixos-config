@@ -1,10 +1,7 @@
 {
-	home-manager,
 	username,
 	...
-}@inputs : let
-	dotfilesPath = "/home/${username}/NixOS-Config/nixos-config/home/dotfiles";
-in {
+}: {
 	imports = [
 		./display 
 		./programs # ( inputs // { inherit dotfilesPath; } )
