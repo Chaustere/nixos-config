@@ -14,7 +14,6 @@
 		## development stuff
 		gcc
 		go
-		composer
 		php
 		luarocks
 		ruby
