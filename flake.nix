@@ -37,12 +37,6 @@
 	nixos-user = {
 		url = "git+ssh://git@github.com/Chaustere/nixos-user.git?shallow=1";
 	};
-
-	# import dotfiles repo for home-manager
-	dotfiles = {
-		url = "github:Chaustere/dotfiles/main";
-		flake = false;
-	};
   };
 
   outputs = inputs @ {
@@ -50,7 +44,6 @@
     nixpkgs,
     home-manager,
 	nixos-user,
-	dotfiles,
     ...
   }: {
     nixosConfigurations = {
