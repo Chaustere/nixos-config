@@ -3,7 +3,7 @@
 #
 # Image path supports environment variables and shell expansions,
 # e.g. image=$HOME/Pictures/default.png
-image=/home/owen/Images/RW_Hibernation_screen.png
+image=$HOME/NixOS-Config/dotfiles/RW_Hibernation_screen.png
 scaling=fill
 
 ring-color=E0B0FF
