@@ -29,6 +29,8 @@
 options = lib.mkDefault "--delete-older-than 7d";
   };
   
+  	
+
 
   # Enable system services
   services = {
@@ -46,12 +48,21 @@ options = lib.mkDefault "--delete-older-than 7d";
     
 	# Enable touchpad support (enabled default in most desktopManager).
     libinput.enable = true;
+
 	
 	# SDDM
 	displayManager.sddm = {
-	  enable = true;
+	  enable = true;  
+	  package = pkgs.kdePackages.sddm; # qt6 sddm version
 	  autoNumlock = true;
 	  wayland.enable = true;
+	  theme = "sddm-astronaut-theme";
+	  # Fix bug whith sddm not finding these packages
+	  extraPackages = with pkgs; [
+        kdePackages.qtmultimedia
+        kdePackages.qtsvg
+        kdePackages.qtvirtualkeyboard
+      ];
 	};
   
     # Enable CUPS to print documents.
@@ -92,6 +103,18 @@ options = lib.mkDefault "--delete-older-than 7d";
 	gammastep
 	pango
 	wl-clipboard-rs
+
+	(pkgs.callPackage ../extra/sddm-astronaut-theme.nix {
+        theme = "pixel_sakura";
+		  #  themeConfig={
+		  #    General = {
+		  #      HeaderText ="Hi";
+		  #         Background="/home/user/Desktop/wp.png";
+		  #         FontSize="10.0";
+		  # };
+		  #  };
+      })
+
   ];
 
   programs.sway = {
