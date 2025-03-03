@@ -7,11 +7,13 @@
 		zip
 		unzip
 
-		# misc
+		# misc utilities
 		graphviz
 		krita
+		vlc
+		qimgv
 		
-		## development stuff
+		#### development stuff
 		gcc
 		go
 		php
