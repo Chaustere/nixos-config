@@ -1,8 +1,9 @@
 {
-	config,
-	dotfilesPath,
-	...
-}: {
+  config,
+  dotfilesPath,
+  ...
+}:
+{
   programs.starship = {
     enable = true;
     # Configuration written to ~/.config/starship.toml
@@ -18,5 +19,6 @@
     # };
   };
 
-  home.file.".config/starship.toml".source = config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/starship/starship.toml";
+  home.file.".config/starship.toml".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/starship/starship.toml";
 }

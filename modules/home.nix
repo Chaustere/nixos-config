@@ -1,20 +1,20 @@
 {
-	nixos-user,
-	...
-}: {
-	###################################
-	#                                 #
-	# home-manager user configuration #
-	#                                 #
-	###################################
+  nixos-user,
+  ...
+}:
+{
+  ###################################
+  #                                 #
+  # home-manager user configuration #
+  #                                 #
+  ###################################
 
-	imports = [
-		../home
-	];
+  imports = [
+    ../home
+  ];
 
-	programs.git = {
-		userName = nixos-user.gitUserName;
-		userEmail = nixos-user.gitUserEmail;
-	};
+  programs.git = {
+    userName = nixos-user.gitUserName;
+    userEmail = nixos-user.gitUserEmail;
+  };
 }
-

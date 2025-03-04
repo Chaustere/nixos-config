@@ -2,7 +2,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -10,7 +11,10 @@
   # customise /etc/nix/nix.conf declaratively via `nix.settings`
   nix.settings = {
     # enable flakes globally
-    experimental-features = ["nix-command" "flakes"];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
 
     substituters = [
       "https://nix-community.cachix.org"
@@ -26,102 +30,98 @@
   nix.gc = {
     automatic = lib.mkDefault true;
     dates = lib.mkDefault "weekly";
-options = lib.mkDefault "--delete-older-than 7d";
+    options = lib.mkDefault "--delete-older-than 7d";
   };
-  
-  	
-
 
   # Enable system services
   services = {
-	# Enable power-profiles-daemon
-   	power-profiles-daemon.enable = true;
-    
-	# Pipewire
-	pipewire = {
+    # Enable power-profiles-daemon
+    power-profiles-daemon.enable = true;
+
+    # Pipewire
+    pipewire = {
       enable = true;
       pulse.enable = true;
-  	};
-	
-	# Bluetooth manager
-	blueman.enable = true;
-    
-	# Enable touchpad support (enabled default in most desktopManager).
+    };
+
+    # Bluetooth manager
+    blueman.enable = true;
+
+    # Enable touchpad support (enabled default in most desktopManager).
     libinput.enable = true;
 
-	
-	# SDDM
-	displayManager.sddm = {
-	  enable = true;  
-	  package = pkgs.kdePackages.sddm; # qt6 sddm version
-	  autoNumlock = true;
-	  wayland.enable = true;
-	  theme = "sddm-astronaut-theme";
-	  # Fix bug whith sddm not finding these packages
-	  extraPackages = with pkgs; [
+    # SDDM
+    displayManager.sddm = {
+      enable = true;
+      package = pkgs.kdePackages.sddm; # qt6 sddm version
+      autoNumlock = true;
+      wayland.enable = true;
+      theme = "sddm-astronaut-theme";
+      # Fix bug whith sddm not finding these packages
+      extraPackages = with pkgs; [
         kdePackages.qtmultimedia
         kdePackages.qtsvg
         kdePackages.qtvirtualkeyboard
       ];
-	};
-  
+    };
+
     # Enable CUPS to print documents.
     printing.enable = true;
   };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-  
+
   # Packages installed in system profile.
   environment.systemPackages = with pkgs; [
     vim
-	neovim
+    neovim
     wget
     tree
     fastfetch
-	btop
-	htop
-	curl
+    btop
+    htop
+    curl
     git
-	fish
-	yazi
-	light
+    fish
+    yazi
+    light
 
-	# Desktop environment packages
-	kdePackages.dolphin
-	# swayfx
-	# xdg-desktop-portal
-	# xdg-desktop-portal-wlr
-	libnotify
-	xdg-utils
-	swaybg
-	swaylock
-	swaynotificationcenter
-	waybar
-	rofi
-	kitty
-	gammastep
-	pango
-	wl-clipboard-rs
+    # Desktop environment packages
+    kdePackages.dolphin
+    # swayfx
+    # xdg-desktop-portal
+    # xdg-desktop-portal-wlr
+    libnotify
+    xdg-utils
+    swaybg
+    swaylock
+    swaynotificationcenter
+    waybar
+    rofi
+    kitty
+    gammastep
+    pango
+    wl-clipboard-rs
 
-	(pkgs.callPackage ../extra/sddm-astronaut-theme.nix {
-        theme = "pixel_sakura";
-		  #  themeConfig={
-		  #    General = {
-		  #      HeaderText ="Hi";
-		  #         Background="/home/user/Desktop/wp.png";
-		  #         FontSize="10.0";
-		  # };
-		  #  };
-      })
+    (pkgs.callPackage ../extra/sddm-astronaut-theme.nix {
+      theme = "pixel_sakura";
+      #  themeConfig={
+      #    General = {
+      #      HeaderText ="Hi";
+      #         Background="/home/user/Desktop/wp.png";
+      #         FontSize="10.0";
+      # };
+      #  };
+    })
 
   ];
 
   programs.sway = {
     enable = true;
-	package = pkgs.swayfx;
+    package = pkgs.swayfx;
   };
-  
+
   programs.fish.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -131,30 +131,30 @@ options = lib.mkDefault "--delete-older-than 7d";
     enableSSHSupport = true;
   };
   xdg.portal = {
-  	enable = true;
-  	extraPortals = with pkgs; [
-    	xdg-desktop-portal-wlr
-    	kdePackages.xdg-desktop-portal-kde
-    	xdg-desktop-portal-gtk
-  	];
-  	wlr = {
-    	enable = true;
-  	};
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      kdePackages.xdg-desktop-portal-kde
+      xdg-desktop-portal-gtk
+    ];
+    wlr = {
+      enable = true;
+    };
   };
 
   fonts.enableDefaultPackages = true;
 
-	fonts.packages = with pkgs; [
-		noto-fonts
-		fira-code
-		nerd-fonts.fira-code
-		nerd-fonts.fira-mono
-		nerd-fonts.jetbrains-mono
-		nerd-fonts.fantasque-sans-mono
-		nerd-fonts.symbols-only
-		# (nerd-fonts.override { fonts = [ "FiraCode" "FiraMono" "FantasqueSansMono" ]; })
-	];
-  
+  fonts.packages = with pkgs; [
+    noto-fonts
+    fira-code
+    nerd-fonts.fira-code
+    nerd-fonts.fira-mono
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.fantasque-sans-mono
+    nerd-fonts.symbols-only
+    # (nerd-fonts.override { fonts = [ "FiraCode" "FiraMono" "FantasqueSansMono" ]; })
+  ];
+
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #

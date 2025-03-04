@@ -1,41 +1,42 @@
 {
-	pkgs, 
-	...
-}: {
-	home.packages = with pkgs; [
-		# archives
-		zip
-		unzip
+  pkgs,
+  ...
+}:
+{
+  home.packages = with pkgs; [
+    # archives
+    zip
+    unzip
 
-		# misc utilities
-		graphviz
-		krita
-		vlc
-		qimgv
-		
-		#### development stuff
-		gcc
-		go
-		php
-		luarocks
-		ruby
-		jdk23
-		julia-bin
-		python3
-		tree-sitter
+    # misc utilities
+    graphviz
+    krita
+    vlc
+    qimgv
 
-		# node
-		nodejs
-		nodePackages.npm
-		nodePackages.pnpm
-		
-		# rust
-		cargo
-		rustc
+    #### development stuff
+    gcc
+    go
+    php
+    luarocks
+    ruby
+    jdk23
+    julia-bin
+    python3
+    tree-sitter
 
-		vesktop
-		firefox
-		starship
-	];
+    # node
+    nodejs
+    nodePackages.npm
+    nodePackages.pnpm
+
+    # rust
+    cargo
+    rustc
+
+    vesktop
+    firefox
+    starship
+  ];
 
 }

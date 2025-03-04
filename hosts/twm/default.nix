@@ -5,22 +5,21 @@
 { ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-	  ../../modules/system.nix
-    ];
-
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../modules/system.nix
+  ];
 
   networking.hostName = "twm"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable = true;  # Easies
+  networking.networkmanager.enable = true; # Easies
 
   hardware.bluetooth = {
-	enable = true; # enables support for Bluetooth
-	powerOnBoot = true; # powers up the default Bluetooth controller on boott to use and most distros use this by default.
-  };  
+    enable = true; # enables support for Bluetooth
+    powerOnBoot = true; # powers up the default Bluetooth controller on boott to use and most distros use this by default.
+  };
 
   # Set your time zone.
   time.timeZone = "Europe/Paris";
@@ -48,5 +47,3 @@
   # accidentally delete configuration.nix.
   # system.copySystemConfiguration = true;
 }
-
-
