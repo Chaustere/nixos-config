@@ -80,3 +80,16 @@ vim.opt.relativenumber = true
 -- vim.o.foldlevel = 99
 -- vim.o.foldlevelstart = 99
 -- vim.o.foldmethod = 'expr'
+
+-- Folds
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldcolumn = '1'
+vim.opt.foldtext = ""
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 1
+vim.opt.foldnestmax = 4
+
+-- let g:mkdp_browser = '/usr/bin/firefox'
+vim.g.mkdp_browser = '/usr/bin/firefox'
+
